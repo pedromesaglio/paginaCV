@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Currículum</title>
+</head>
+<body>
+    <header>
+        <h1>Mi Portafolio</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/projects">Proyectos</a>
+            <a href="/resume">Currículum</a>
+            <a href="/contact">Contacto</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section>
+            <h2>Currículum</h2>
+            <p>Puedes ver y descargar mi currículum completo en PDF usando el siguiente enlace:</p>
+            <div class="resume-link">
+                <a href="{{ url_for('static', filename='curriculum.pdf') }}" target="_blank">Descargar Currículum</a>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

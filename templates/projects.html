@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Proyectos</title>
+</head>
+<body>
+    <header>
+        <h1>https://github.com/pedromesaglio/microblog</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/projects">Proyectos</a>
+            <a href="/resume">Currículum</a>
+            <a href="/contact">Contacto</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section>
+            <h2>https://github.com/pedromesaglio/Voley-Statistics</h2>
+            <ul>
+                {% for repo in repos %}
+                    <li>
+                        <a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a> - {{ repo.description }}
+                    </li>
+                {% endfor %}
+            </ul>
+            <p>Visita mi <a href="https://github.com/pedromesaglio" target="_blank">perfil en GitHub</a> para más proyectos.</p>
+        </section>
+    </div>
+</body>
+</html>
+

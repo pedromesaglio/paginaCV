@@ -1,0 +1,48 @@
+<!-- templates/contact.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Contacto</title>
+</head>
+<body>
+    <header>
+        <h1>Mi Portafolio</h1>
+        <nav>
+            <a href="/">Inicio</a>
+            <a href="/projects">Proyectos</a>
+            <a href="/resume">Currículum</a>
+            <a href="/contact">Contacto</a>
+        </nav>
+    </header>
+    <div class="container">
+        <section>
+            <h2>Contacto</h2>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="alert">
+                        {% for message in messages %}
+                            <p>{{ message }}</p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            <form action="/contact" method="post">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Correo:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>
